@@ -22,7 +22,9 @@ jobs:
           role-to-assume: arn:aws:iam::225000673436:role/IaC-Role
           aws-region: us-east-1
           role-session-name: GitHubActionsSession
-          # role-external-id: ${{ secrets.AWS_EXTERNAL_ID }} 
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Log in to Amazon ECR
         env:
